@@ -106,6 +106,6 @@ process:
 
 # process_name - host_addr map
 host:
-    localhost: 172.17.0.5
-    p1: 172.17.0.6
-    p2: 172.17.0.7
+    localhost: 172.17.0.2
+    p1: 172.17.0.3
+    p2: 172.17.0.4
