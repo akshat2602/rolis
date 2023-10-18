@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-RUN apt-get update
-
 RUN echo 'root:root' |chpasswd
 
 RUN apt-get clean && \
@@ -10,13 +8,7 @@ RUN apt-get clean && \
 # install basic libraries
 RUN apt-get update
 RUN apt update
-RUN apt-get install -y git vim htop sudo
-RUN apt-get install -y make cmake
-RUN apt-get install -y gcc
-RUN apt-get install -y gdb
-RUN apt-get install -y g++ strace
-RUN apt-get install -y silversearcher-ag
-RUN apt-get install -y net-tools
+RUN apt-get install -y git vim htop sudo make cmake gcc gdb g++ strace silversearcher-ag net-tools iperf3 nload iproute2 wget
 
 # copy .gitconfig
 COPY gitconfig /root/.gitconfig
@@ -24,9 +16,8 @@ COPY gitconfig /root/.gitconfig
 # deploy Rolis environment
 WORKDIR "/root"
 # using branch "master" for the Rolis
-RUN git clone https://github.com/stonysystems/rolis.git
+RUN git clone --branch crpc_test https://github.com/akshat2602/rolis.git
 
-RUN apt-get install -y wget
 WORKDIR "/root/rolis"
 # install dependencies
 RUN bash install.sh
