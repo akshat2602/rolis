@@ -8,7 +8,7 @@ RUN apt-get clean && \
 
 # install basic libraries
 RUN apt-get update
-RUN apt-get install -y git vim htop sudo make cmake gcc gdb g++ strace silversearcher-ag net-tools iperf3 nload iproute2 wget
+RUN apt-get install -y git vim htop sudo make cmake gcc gdb g++ strace silversearcher-ag net-tools iperf3 nload iproute2 wget pkg-config
 
 # copy .gitconfig
 COPY gitconfig /root/.gitconfig
