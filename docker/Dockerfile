@@ -16,7 +16,7 @@ COPY gitconfig /root/.gitconfig
 # deploy Rolis environment
 WORKDIR "/root"
 # using branch "master" for the Rolis
-RUN git clone --branch crpc_test https://github.com/akshat2602/rolis.git
+RUN git clone --branch broadcast https://github.com/akshat2602/rolis.git
 
 WORKDIR "/root/rolis"
 # install dependencies
