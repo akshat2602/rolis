@@ -387,9 +387,10 @@ namespace janus
     shared_ptr<PaxosAcceptQuorumEvent> sp_quorum = nullptr;
 
     Log_debug("****wait started for pard_id: %d", par_id_);
-    if (false)
+    // if (false)
+    // {
+    if (!Config::GetConfig()->isCrpcEnabled())
     {
-      //  if (!Config::GetConfig()->isCrpcEnabled()){
       // Log_debug("is_crpc_enabled is false; calling BroadcastBulkAccept");
       sp_quorum = commo()->BroadcastBulkAccept(par_id_, cmd_, [this, ess_cc](ballot_t ballot, int valid)
                                                {
