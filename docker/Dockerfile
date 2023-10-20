@@ -7,7 +7,7 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # install basic libraries
-RUN apt-get update && apt-get upgrade
+RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y git vim htop sudo make cmake gcc gdb g++ strace silversearcher-ag net-tools iperf3 nload iproute2 wget pkg-config
 
 # copy .gitconfig
